@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/reactive",
         "main": "packages/reactive/src/index.ts",
         "tsConfig": "packages/reactive/tsconfig.lib.json",
-        "assets": []
+        "assets": [],
+        "project": "packages/reactive/package.json"
       }
     },
     "publish": {

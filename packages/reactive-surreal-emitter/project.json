@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/reactive-surreal-emitter",
         "main": "packages/reactive-surreal-emitter/src/index.ts",
         "tsConfig": "packages/reactive-surreal-emitter/tsconfig.lib.json",
-        "assets": []
+        "assets": [],
+        "project": "packages/reactive-surreal-emitter/package.json"
       }
     },
     "publish": {

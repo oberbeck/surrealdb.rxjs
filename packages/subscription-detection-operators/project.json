@@ -10,7 +10,8 @@
         "outputPath": "dist/packages/subscription-detection-operators",
         "main": "packages/subscription-detection-operators/src/index.ts",
         "tsConfig": "packages/subscription-detection-operators/tsconfig.lib.json",
-        "assets": []
+        "assets": [],
+        "project": "packages/subscription-detection-operators/package.json"
       }
     },
     "publish": {
