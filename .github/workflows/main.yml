@@ -18,5 +18,5 @@ jobs:
       - run: yarn nx workspace-lint
       - run: yarn nx format:check
       - run: yarn nx affected --target=lint --parallel=3
-      - run: yarn nx affected --target=test --parallel=3 --ci --code-coverage
+      - run: CONTAINER_NAME="SURREAL_DB_TEST_CONTAINER"; docker run -d --name $CONTAINER_NAME -p 8000:8000 surrealdb/surrealdb:latest start --user root --pass root && yarn nx affected --target=test --parallel=3 --ci --code-coverage; docker stop "$CONTAINER_NAME" && docker rm "$CONTAINER_NAME"
       - run: yarn nx affected --target=build --parallel=3
