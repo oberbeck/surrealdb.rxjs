@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@surrealdb.rxjs/reactive": ["packages/reactive/src/index.ts"]
+      "@surrealdb.rxjs/reactive": ["packages/reactive/src/index.ts"],
+      "@surrealdb.rxjs/subscription-detection-operators": [
+        "packages/subscription-detection-operators/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
