@@ -1,0 +1,46 @@
+:host {
+  @apply flex
+    gap-4
+    flex-col
+    p-4;
+}
+
+.actions {
+  @apply flex
+    space-x-2
+    justify-center;
+}
+
+button {
+  @apply inline-block
+    px-6
+    py-2.5
+    bg-cyan-700
+    text-white
+    font-medium
+    text-xs
+    leading-tight
+    uppercase
+    rounded
+    shadow-md
+    hover:bg-cyan-800
+    hover:shadow-lg
+    focus:bg-cyan-800
+    focus:shadow-lg
+    focus:outline-none
+    focus:ring-0
+    active:bg-cyan-900
+    active:shadow-lg
+    transition
+    duration-150
+    ease-in-out;
+}
+
+code {
+  @apply font-mono
+    bg-slate-500
+    text-white
+    w-full
+    flex
+    p-6;
+}

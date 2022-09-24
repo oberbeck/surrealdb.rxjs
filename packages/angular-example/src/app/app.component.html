@@ -1,1 +1,6 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div class="actions">
+  <button type="button" (click)="connectInteractionHandler()">connect</button>
+  <button type="button" (click)="closeInteractionHandler()">close</button>
+</div>
+
+<code> closeCalled$: {{ closeCalled$ | async }} </code>
