@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@surrealdb.rxjs/angular": ["packages/angular/src/index.ts"],
       "@surrealdb.rxjs/reactive": ["packages/reactive/src/index.ts"],
       "@surrealdb.rxjs/reactive-surreal-emitter": [
         "packages/reactive-surreal-emitter/src/index.ts"
