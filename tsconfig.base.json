@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@surrealdb.rxjs/reactive": ["packages/reactive/src/index.ts"],
+      "@surrealdb.rxjs/reactive-surreal-emitter": [
+        "packages/reactive-surreal-emitter/src/index.ts"
+      ],
       "@surrealdb.rxjs/subscription-detection-operators": [
         "packages/subscription-detection-operators/src/index.ts"
       ]

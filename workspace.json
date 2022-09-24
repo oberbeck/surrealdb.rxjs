@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "reactive": "packages/reactive",
+    "reactive-surreal-emitter": "packages/reactive-surreal-emitter",
     "subscription-detection-operators": "packages/subscription-detection-operators"
   }
 }
