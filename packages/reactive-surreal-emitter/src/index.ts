@@ -1,1 +1,1 @@
-export * from './lib/reactive-surreal-emitter';
+export * from './lib/with-observables';
