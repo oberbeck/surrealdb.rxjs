@@ -1,6 +1,6 @@
 # reactive-surreal-emitter
 
-This library was generated with [Nx](https://nx.dev).
+An extension for `surrealdb.js`'s emitter implementation providing a reactive interface.
 
 ## Building
 

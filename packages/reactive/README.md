@@ -1,6 +1,6 @@
 # reactive
 
-This library was generated with [Nx](https://nx.dev).
+A RxJS wrapper for SurrealDB.
 
 ## Building
 

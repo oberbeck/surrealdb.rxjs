@@ -1,6 +1,6 @@
 # subscription-detection-operators
 
-This library was generated with [Nx](https://nx.dev).
+A collection of RxJS operators to keep track of active subscriptions on an `Observable`.
 
 ## Building
 

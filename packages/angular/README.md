@@ -1,6 +1,6 @@
 # angular
 
-This library was generated with [Nx](https://nx.dev).
+All things Angular for SurrealDB.
 
 ## Running unit tests
 
