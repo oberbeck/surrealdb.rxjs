@@ -1,1 +1,2 @@
-export * from './lib/subscription-detection-operators';
+export * from './lib/tap-subscription-count';
+
