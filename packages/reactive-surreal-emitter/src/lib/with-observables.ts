@@ -2,7 +2,10 @@ import { tapHotColdChange } from '@surrealdb.rxjs/subscription-detection-operato
 import { Observable, Subject, take } from 'rxjs';
 import { Emitter, EventMap, EventName, EventArguments } from './emitter';
 
-type Constructor<T = {}> = new (...args: any[]) => T;
+// A mixin class must have a constructor with a single rest parameter of type 'any[]'
+// https://github.com/microsoft/TypeScript/issues/37142
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+type Constructor<T = unknown> = new (...args: any[]) => T;
 
 export function withObservables<
   TBase extends Constructor<Emitter<TEventMap>>,
@@ -23,29 +26,33 @@ export function withObservables<
      * @returns an `Observable` emitting everytime an event is emitted for `e`.
      */
     on$<TEventName extends EventName<TEventMap>>(e: TEventName) {
-      if (!this.#events[e]) {
-        const subject = new Subject<EventArguments<TEventName, TEventMap>>();
-        const observable = subject.pipe(
-          tapHotColdChange((hasSubscription) => {
-            const listener = (
-              ...args: EventArguments<TEventName, TEventMap>
-            ) => {
-              subject.next(args);
-            };
-            if (hasSubscription) {
-              this.on(e, listener);
-            } else {
-              this.off(e, listener);
-            }
-          })
-        );
-        this.#events[e] = {
-          subject,
-          observable,
-        };
-      }
+      const { observable } =
+        // use existing observable if already created
+        this.#events[e] ??
+        // else, init new observable, remember it, and use it
+        (this.#events[e] = (() => {
+          const subject = new Subject<EventArguments<TEventName, TEventMap>>();
+          const observable = subject.pipe(
+            tapHotColdChange((hasSubscription) => {
+              const listener = (
+                ...args: EventArguments<TEventName, TEventMap>
+              ) => {
+                subject.next(args);
+              };
+              if (hasSubscription) {
+                this.on(e, listener);
+              } else {
+                this.off(e, listener);
+              }
+            })
+          );
+          return (this.#events[e] = {
+            subject,
+            observable,
+          });
+        })());
 
-      return this.#events[e]!.observable;
+      return observable;
     }
 
     /**
