@@ -1,6 +1,5 @@
 import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
-import { withObservables } from '@surrealdb.rxjs/reactive-surreal-emitter';
-import Surreal from 'surrealdb.js';
+import { SurrealRx } from '@surrealdb.rxjs/reactive';
 
 export const SURREAL_URL = new InjectionToken<string>('SURREAL_URL');
 export const SURREAL_TOKEN = new InjectionToken<string>('SURREAL_TOKEN');
@@ -9,7 +8,7 @@ export const SURREAL_TOKEN = new InjectionToken<string>('SURREAL_TOKEN');
  * Surreal for Angular
  */
 @Injectable({ providedIn: 'root' })
-export class SurrealNg extends withObservables(Surreal) {
+export class SurrealNg extends SurrealRx {
   constructor(
     @Optional()
     @Inject(SURREAL_URL)
